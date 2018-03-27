@@ -4,7 +4,7 @@
 apt update
 apt install -y \
     apt-transport-https ca-certificates \
-    curl software-properties-common qemu-user-static
+    curl software-properties-common debootstrap qemu-user-static
 
 # Docker CE
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
