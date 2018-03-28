@@ -1,5 +1,9 @@
 FROM pi-oven-bootstrap
 
+ENV DEBIAN_FRONTEND=noninteractive
+# https://bugs.launchpad.net/nexenta/+bug/335056
+RUN chown -R man /var/cache/man
+
 # 00-configure-apt
 COPY files/sources.list /etc/apt
 COPY files/raspi.list /etc/apt/sources.list.d
@@ -10,8 +14,9 @@ RUN apt-get update
 RUN apt-get dist-upgrade -y
 
 # 01-locale
-RUN debconf-set-selections locales locales/locales_to_be_generated multiselect en_GB.UTF-8 UTF-8
-RUN debconf-set-selections locales locales/default_environment_locale select en_GB.UTF-8
+COPY files/debconf debconf
+RUN debconf-set-selections debconf && \
+    rm -rf debconf
 RUN apt-get install -y locales
 
 # 02-firmware
