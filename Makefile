@@ -23,7 +23,7 @@ build:
 # Internal Target
 # =======================================================
 
-.int-build-img:
+.int-build: 
 	sudo bash ./scripts/docker-build/debootstrap.sh
 	bash ./scripts/docker-build/stage0.sh
 	bash ./scripts/docker-build/stage1.sh

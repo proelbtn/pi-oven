@@ -53,6 +53,7 @@ RUN usermod --pass='*' root
 RUN rm -rf /etc/ssh/ssh_host_*_key*
 
 # 02-net-tweaks
+RUN apt-get update
 RUN apt-get install -y wpasupplicant wireless-tools firmware-atheros \
     firmware-brcm80211 firmware-libertas firmware-misc-nonfree \
     firmware-realtek raspberrypi-net-mods dhcpcd5 net-tools
