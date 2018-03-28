@@ -1,4 +1,4 @@
-FROM pi-oven-bootstrap
+FROM pi-oven-debootstrap
 
 ENV DEBIAN_FRONTEND=noninteractive
 # https://bugs.launchpad.net/nexenta/+bug/335056
