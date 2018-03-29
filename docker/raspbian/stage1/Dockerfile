@@ -1,4 +1,4 @@
-FROM pi-oven-stage0
+FROM raspbian:stage0
 
 # 00-boot-files
 COPY files/cmdline.txt /boot

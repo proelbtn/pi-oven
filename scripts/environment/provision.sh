@@ -13,7 +13,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 apt update
-apt-get install -y docker-ce
+apt install -y docker-ce
 
 # for Docker
 gpasswd -a vagrant docker

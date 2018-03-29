@@ -1,4 +1,4 @@
-FROM pi-oven-stage1
+FROM raspbian:stage1
 
 ENV ACTIVE_CONSOLES ""
 

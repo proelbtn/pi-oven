@@ -65,3 +65,5 @@ Temporary Items
 .vagrant
 *.log
 lib/rootfs
+build
+.cache

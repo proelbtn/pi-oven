@@ -1,4 +1,4 @@
-FROM pi-oven-debootstrap
+FROM raspbian:rootfs
 
 ENV DEBIAN_FRONTEND=noninteractive
 # https://bugs.launchpad.net/nexenta/+bug/335056
