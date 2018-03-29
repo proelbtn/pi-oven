@@ -35,6 +35,6 @@ _raspbian-lite-build:
 	bash ./scripts/build/raspbian/stage2.sh
 
 _raspbian-lite-image-build:
-	bash ./scripts/image-build/pre_build.sh raspbian:stage2
-	sudo bash ./scripts/image-build/build.sh
+	sudo bash ./scripts/image-build/pre_build.sh raspbian:stage2
+	sudo bash ./scripts/image-build/build.sh raspbian:stage2
 	bash ./scripts/image-build/post_build.sh raspbian-lite.img
