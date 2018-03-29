@@ -82,7 +82,8 @@ mount -v "$ROOT_DEV" "/tmp/mnt" -t ext4
 mkdir -p "/tmp/mnt/boot"
 mount -v "$BOOT_DEV" "/tmp/mnt/boot" -t vfat
 
-rsync -aHAXx --exclude var/cache/apt/archives "/tmp/rootfs/" "/tmp/mnt/" 2>/dev/null
+docker container run --rm -v /tmp/mnt:/.mnt -w "/" -h raspberrypi $1 \
+	rsync -aHAXx --exclude var/cache/apt/archives --exclude .mnt "/" "/.mnt/" 2>/dev/null
 
 IMGID="$(dd if="/tmp/raspberrypi.img" skip=440 bs=1 count=4 2>/dev/null | xxd -e | cut -f 2 -d' ')"
 
